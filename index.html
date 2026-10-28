@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Más Viajes Tours | Agencia Formal MINCETUR</title>
     
-    <!-- Fuentes e Iconos -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -67,6 +66,16 @@
         </div>
     </div>
 
+    <!-- SELLOS DE CONFIANZA (TRUST BADGES) -->
+    <div class="trust-badges">
+        <div class="container badge-container">
+            <span><i class="fas fa-lock"></i> Pago 100% Seguro</span>
+            <span><i class="fas fa-certificate"></i> Autorizado por MINCETUR</span>
+            <span><i class="fas fa-mobile-alt"></i> Yape / Plin / Transferencia</span>
+            <span><i class="fas fa-calendar-check"></i> Reserva Flexible</span>
+        </div>
+    </div>
+
     <!-- SECCIÓN TOURS -->
     <section class="tours-section" id="tours">
         <div class="container">
@@ -83,7 +92,8 @@
                     <div class="card-content">
                         <h3>Tour Paracas - Ica</h3>
                         <span class="price">Desde S/ 120</span>
-                        <a href="https://wa.me/51942634514?text=Hola,%20quiero%20reservar%20el%20Tour%20a%20Paracas" class="btn-card" target="_blank">Reservar Ahora</a>
+                        <!-- Botón modificado para abrir el Modal -->
+                        <button class="btn-card" onclick="openModal('paracas')">Ver Detalles</button>
                     </div>
                 </div>
                 
@@ -96,7 +106,7 @@
                     <div class="card-content">
                         <h3>Tour Huancayo</h3>
                         <span class="price">Desde S/ 150</span>
-                        <a href="https://wa.me/51942634514?text=Hola,%20quiero%20reservar%20el%20Tour%20a%20Huancayo" class="btn-card" target="_blank">Reservar Ahora</a>
+                        <button class="btn-card" onclick="openModal('huancayo')">Ver Detalles</button>
                     </div>
                 </div>
 
@@ -109,7 +119,7 @@
                     <div class="card-content">
                         <h3>Tour Cusco Mágico</h3>
                         <span class="price">Desde S/ 250</span>
-                        <a href="https://wa.me/51942634514?text=Hola,%20quiero%20reservar%20el%20Tour%20a%20Cusco" class="btn-card" target="_blank">Reservar Ahora</a>
+                        <button class="btn-card" onclick="openModal('cusco')">Ver Detalles</button>
                     </div>
                 </div>
 
@@ -122,7 +132,7 @@
                     <div class="card-content">
                         <h3>City Tour Lima</h3>
                         <span class="price">Desde S/ 50</span>
-                        <a href="https://wa.me/51942634514?text=Hola,%20quiero%20reservar%20el%20City%20Tour%20en%20Lima" class="btn-card" target="_blank">Reservar Ahora</a>
+                        <button class="btn-card" onclick="openModal('lima')">Ver Detalles</button>
                     </div>
                 </div>
             </div>
@@ -199,6 +209,80 @@
         </div>
     </section>
 
+    <!-- GALERÍA DE INSTAGRAM (SOCIAL PROOF) -->
+    <section class="instagram-section">
+        <div class="container">
+            <h2 class="section-title">Síguenos en Instagram</h2>
+            <p class="section-subtitle">Etiquétanos en tus fotos con <strong>@masviajes.tours</strong></p>
+            
+            <div class="instagram-grid">
+                <!-- Usamos las mismas fotos de los tours para la galería por ahora -->
+                <a href="https://www.instagram.com/masviajes.tours" target="_blank" class="ig-item">
+                    <img src="images/tour-paracas.jpg" alt="IG Post 1">
+                    <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/masviajes.tours" target="_blank" class="ig-item">
+                    <img src="images/tour-cusco.jpg" alt="IG Post 2">
+                    <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/masviajes.tours" target="_blank" class="ig-item">
+                    <img src="images/tour-huancayo.jpg" alt="IG Post 3">
+                    <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/masviajes.tours" target="_blank" class="ig-item">
+                    <img src="images/nosotros.jpg" alt="IG Post 4">
+                    <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/masviajes.tours" target="_blank" class="ig-item">
+                    <img src="images/hero-bg.jpg" alt="IG Post 5">
+                    <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/masviajes.tours" target="_blank" class="ig-item">
+                    <img src="images/tour-lima.jpg" alt="IG Post 6">
+                    <div class="ig-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PREGUNTAS FRECUENTES -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Resolvemos tus dudas antes de viajar.</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">¿Cómo puedo reservar un tour? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Puedes reservar directamente haciendo clic en el botón de WhatsApp de cualquier tour. Te enviaremos los detalles y las opciones de pago (Yape, Plin o transferencia bancaria).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué métodos de pago aceptan? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Aceptamos Yape, Plin, transferencias bancarias y pagos en efectivo. Para asegurar tu cupo, se requiere un adelanto del 50% y el saldo se cancela el día del tour.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Los tours incluyen almuerzo? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Depende del tour. En los Full Day (como Paracas o Huancayo) generalmente no está incluido para que puedas elegir dónde comer. Sin embargo, en los tours a Cusco o paquetes largos, sí incluimos almuerzos en restaurantes turísticos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">¿Puedo reprogramar mi viaje? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Sí, puedes reprogramar tu viaje sin costo avisando con al menos 48 horas de anticipación, sujeto a disponibilidad de cupos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECCIÓN CONTACTO Y MAPA -->
     <section class="contact-section" id="contacto">
         <div class="container contact-grid">
@@ -211,7 +295,6 @@
                     <div>
                         <h4>Ubicación</h4>
                         <p>Lima, Cusco - Perú</p>
-                        <!-- Enlace al Google Maps proporcionado -->
                         <a href="https://www.google.com/maps/place/M%C3%A1s+Viajes+Tours/@-9.1938967,-80.3144312,2279211m/data=!3m2!1e3!4b1!4m6!3m5!1s0x453b3f190627bc0f:0x2148102b9e9a286f!8m2!3d-9.2435385!4d-75.0195046!16s%2Fg%2F11l355ccgy" target="_blank" class="link-maps">Ver en Google Maps <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
@@ -233,7 +316,6 @@
                 </div>
             </div>
 
-            <!-- MAPA EMBEBIDO -->
             <div class="map-container fade-in">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989411.125035619!2d-75.0195046!3d-9.2435385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x453b3f190627bc0f%3A0x2148102b9e9a286f!2sM%C3%A1s%20Viajes%20Tours!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe" 
@@ -248,7 +330,35 @@
         </div>
     </section>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <!-- MODAL DE DETALLES DEL TOUR (Oculto por defecto) -->
+    <div id="tourModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <h3 id="modalTitle">Título del Tour</h3>
+                <img id="modalImg" src="" alt="Tour Image">
+                <p id="modalDesc">Descripción del tour...</p>
+                <div class="modal-info">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Guía oficial de turismo</li>
+                        <li><i class="fas fa-check"></i> Transporte turístico ida y vuelta</li>
+                        <li><i class="fas fa-check"></i> Tickets de ingreso a los atractivos</li>
+                    </ul>
+                </div>
+                <a href="" id="modalWhatsapp" class="btn-hero" target="_blank" style="width: 100%; justify-content: center; margin-top: 20px;">
+                    <i class="fab fa-whatsapp"></i> Reservar este Tour
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA FLOTANTE MÓVIL (STICKY CTA) -->
+    <div class="mobile-cta">
+        <a href="tel:+51942634514" class="cta-btn call-btn"><i class="fas fa-phone-alt"></i> Llamar</a>
+        <a href="https://wa.me/51942634514?text=Hola,%20quiero%20informaci%C3%B3n" class="cta-btn wa-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP (Escritorio) -->
     <a href="https://wa.me/51942634514?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20tours" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -278,7 +388,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="year"></span> Más Viajes Tours. Todos los derechos reservados. | Demo web creada por Javier Ayasta - +51 966154072.</p>
+            <p>&copy; <span id="year"></span> Más Viajes Tours. Todos los derechos reservados. | Demo web creada por Javier Ayasta +51 966154072.</p>
         </div>
     </footer>
 
